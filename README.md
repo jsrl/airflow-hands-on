@@ -13,3 +13,17 @@ airflow -h
 ```sh
 airflow tasks test user_processing create_table 2022-01-01
 ```
+
+## Check extract_user and process_user tasks
+```sh
+docker ps
+docker exec -it airflow-hands-on-airflow-worker-1 /bin/bash (only in powershell, not in git bash)
+ls /tmp (CSV file should be there)
+
+control + d
+
+docker ps
+docker exec -it airflow-hands-on-postgres-1 /bin/bash
+psql -Uairflow
+select * from users; 
+```
