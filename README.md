@@ -32,10 +32,14 @@ select * from users;
 
 ## Executors
 
-# Copy the airflow conf to our local machine
+#### Copy the airflow conf to our local machine
+```sh
 docker cp airflow-hands-on-airflow-scheduler-1:/opt/airflow/airflow.cfg .
+```
+#### Vars starting like AIRFLOW__CORE__EXECUTOR: CeleryExecutor overrides values from airflow.cfg
 
-# Vars starting like AIRFLOW__CORE__EXECUTOR: CeleryExecutor overrides values from airflow.cfg
-
-
-
+```sh
+#
+docker compose down && docker compose --profile flower up -d 
+http://localhost:5555/
+```
