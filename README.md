@@ -43,3 +43,11 @@ docker cp airflow-hands-on-airflow-scheduler-1:/opt/airflow/airflow.cfg .
 docker compose down && docker compose --profile flower up -d 
 http://localhost:5555/
 ```
+
+#### Elastic search
+```sh
+docker compose -f docker-compose-es.yaml up -d
+docker compose -f docker-compose-es.yaml ps
+docker exec -it  airflow-hands-on-airflow-scheduler-1 /bin/bash
+curl -X GET 'http://elastic:9200'
+```
